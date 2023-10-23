@@ -18,6 +18,8 @@ import frc.robot.utils.SwerveModuleConstants;
 public class Constants {
   /** All joystick, button, and axis IDs. */
   public static class kControls {
+
+    public static final int PIGEON_ID = 14;
     public static final double AXIS_DEADZONE = 0.1;
 
     public static final int DRIVE_JOYSTICK_ID = 0;
@@ -39,7 +41,7 @@ public class Constants {
     /** Constants that apply to the whole drive train. */
     public static final double TRACK_WIDTH = Units.inchesToMeters(19.5); // Width of the drivetrain measured from the middle of the wheels.
     public static final double WHEEL_BASE = Units.inchesToMeters(19.5); // Length of the drivetrain measured from the middle of the wheels.
-    public static final double WHEEL_DIAMETER = Units.inchesToMeters(4);
+    public static final double WHEEL_DIAMETER = Units.inchesToMeters(6);
     public static final double WHEEL_CIRCUMFERENCE = WHEEL_DIAMETER * Math.PI;
 
     public static final SwerveDriveKinematics KINEMATICS = new SwerveDriveKinematics(
@@ -99,31 +101,31 @@ public class Constants {
      * CanCoder offset is in DEGREES, not radians like the rest of the repo.
      * This is to make offset slightly more accurate and easier to measure.
      */
-    public static final SwerveModuleConstants MOD_0_Constants = new SwerveModuleConstants(
-      1,
-      2,
-      3,
+    public static final SwerveModuleConstants MOD_0_Constants = new SwerveModuleConstants( //FL
+      9,
+      8,
+      13,
       203.115234
     );
 
-    public static final SwerveModuleConstants MOD_1_Constants = new SwerveModuleConstants(
-      4,
-      5,
+    public static final SwerveModuleConstants MOD_1_Constants = new SwerveModuleConstants( //FR
+      7,
       6,
+      12,
       191.074219  
     );
 
-    public static final SwerveModuleConstants MOD_2_Constants = new SwerveModuleConstants(
-      7,
-      8,
-      9,
+    public static final SwerveModuleConstants MOD_2_Constants = new SwerveModuleConstants( //BL
+      3,
+      2,
+      10,
       203.906250
     );
 
-    public static final SwerveModuleConstants MOD_3_Constants = new SwerveModuleConstants(
-      10,
+    public static final SwerveModuleConstants MOD_3_Constants = new SwerveModuleConstants(  //BR
+      5,
+      4,
       11,
-      12,
       155.214844
     );
   }

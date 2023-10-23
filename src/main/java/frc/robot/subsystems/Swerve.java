@@ -2,7 +2,7 @@ package frc.robot.subsystems;
 
 import java.util.function.DoubleSupplier;
 
-import com.kauailabs.navx.frc.AHRS;
+import com.ctre.phoenix.sensors.Pigeon2;
 
 import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.math.geometry.Rotation2d;
@@ -22,10 +22,10 @@ public class Swerve extends SubsystemBase {
 
   private final SwerveDriveOdometry swerveOdometry;
 
-  private final AHRS gyro;
+  private final Pigeon2 pigeon2;
 
   public Swerve() {
-    gyro = new AHRS();
+    pigeon2 = new Pigeon2(Constants.kControls.PIGEON_ID);
 
     modules = new SwerveModule[] {
       new SwerveModule(0, Constants.kSwerve.MOD_0_Constants),
@@ -106,7 +106,7 @@ public class Swerve extends SubsystemBase {
   }
 
   public Rotation2d getYaw() {
-    return Rotation2d.fromDegrees(-gyro.getYaw());
+    return Rotation2d.fromDegrees(-pigeon2.getYaw());
   }
 
   public Command zeroGyroCommand() {
@@ -114,7 +114,7 @@ public class Swerve extends SubsystemBase {
   }
 
   private void zeroGyro() {
-    gyro.zeroYaw();
+    pigeon2.setYaw(0);
   }
 
   public Pose2d getPose() {
@@ -128,6 +128,7 @@ public class Swerve extends SubsystemBase {
   @Override
   public void periodic() {
     swerveOdometry.update(getYaw(), getPositions());
+    Smartdashboard.putData("");
   }
 
   @Override
