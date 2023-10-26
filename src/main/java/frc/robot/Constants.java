@@ -19,6 +19,8 @@ public class Constants {
   /** All joystick, button, and axis IDs. */
   public static class kControls {
 
+    public static final int TEST_ID = 15;
+
     public static final int PIGEON_ID = 14;
     public static final double AXIS_DEADZONE = 0.1;
 

@@ -4,6 +4,7 @@ import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
+import frc.robot.subsystems.EncoderTest;
 import frc.robot.subsystems.Swerve;
 
 /**
@@ -19,8 +20,12 @@ public class RobotContainer {
 
   public final AutoCommands auto;
 
+  public final EncoderTest test;
+
   public RobotContainer() {
     driver = new Joystick(Constants.kControls.DRIVE_JOYSTICK_ID);
+
+    test = new EncoderTest();
 
     swerve = new Swerve();
 

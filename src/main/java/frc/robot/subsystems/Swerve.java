@@ -130,7 +130,7 @@ public class Swerve extends SubsystemBase {
   public void periodic() {
     swerveOdometry.update(getYaw(), getPositions());
     for(int i = 0; modules.length > i; i++){
-      System.out.println(modules[i].getCanCoder());
+      //System.out.println(modules[i].getCanCoder());
       SmartDashboard.putNumber("Mod: " + i + "Cancoder", modules[i].getCanCoder());
     }
   }
