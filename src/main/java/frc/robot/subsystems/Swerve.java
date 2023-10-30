@@ -107,7 +107,7 @@ public class Swerve extends SubsystemBase {
   }
 
   public Rotation2d getYaw() {
-    return Rotation2d.fromDegrees(-pigeon2.getYaw());
+    return Rotation2d.fromDegrees(pigeon2.getYaw());
   }
 
   public Command zeroGyroCommand() {
@@ -133,6 +133,9 @@ public class Swerve extends SubsystemBase {
       //System.out.println(modules[i].getCanCoder());
       SmartDashboard.putNumber("Mod: " + i + "Cancoder", modules[i].getCanCoder());
     }
+    SmartDashboard.putNumber("Pose X", this.getPose().getX());
+    SmartDashboard.putNumber("Pose Y", this.getPose().getY());
+    SmartDashboard.putNumber("Yaw Degrees", this.getYaw().getDegrees());
   }
 
   @Override

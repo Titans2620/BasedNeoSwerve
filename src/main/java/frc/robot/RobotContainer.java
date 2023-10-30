@@ -20,12 +20,12 @@ public class RobotContainer {
 
   public final AutoCommands auto;
 
-  public final EncoderTest test;
+  //public final EncoderTest test;
 
   public RobotContainer() {
     driver = new Joystick(Constants.kControls.DRIVE_JOYSTICK_ID);
 
-    test = new EncoderTest();
+    //test = new EncoderTest();
 
     swerve = new Swerve();
 
